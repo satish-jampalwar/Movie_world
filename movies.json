@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Bahubali",
+        "year": 2010,
+        "genre": "Action",
+        "type": "Feature"
+    },
+    {
+        "id": 2,
+        "title": "Tanaji",
+        "year": 1997,
+        "genre": "History",
+        "type": "Feature"
+    },
+    {
+        "id": 3,
+        "title": "DDLJ",
+        "year": 1997,
+        "genre": "Romance",
+        "type": "Feature"
+    },
+    {
+        "id": 4,
+        "title": "Baggban",
+        "year": 1997,
+        "genre": "Family Drama",
+        "type": "Feature"
+    }
+]

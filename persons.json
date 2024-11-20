@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Shaharukh Khan",
+        "profession": "Actor",
+        "movies": "DDLJ"
+    },
+    {
+        "id": 2,
+        "name": "Ajay Devgan",
+        "profession": "Actor, Director",
+        "movies": "Tanaji"
+    },
+    {
+        "id": 3,
+        "name": "Prabhas",
+        "profession": "Actor",
+        "movies": "Bahubali"
+    },
+    {
+        "id": 3,
+        "name": "Amitabh Bachaan",
+        "profession": "Actor",
+        "movies": "Bagban"
+    },
+    {
+        "id": 4,
+        "name": "Yash Raj",
+        "profession": "Director",
+        "movies": "DDLJ"
+    },
+    {
+        "id": 5,
+        "name": "VV Chopra",
+        "profession": "Director",
+        "movies": "Bagban"
+    }
+]
