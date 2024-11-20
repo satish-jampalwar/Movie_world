@@ -8,6 +8,7 @@ app = Flask(__name__)
 app.config['JWT_SECRET_KEY'] = "MOVIE##WORLD@@**123"
 jwt = JWTManager(app)
 
+# loading local json files for data reference
 with open('users.json') as f:
     users = json.load(f)
 
@@ -16,6 +17,8 @@ with open('movies.json') as f:
 
 with open('persons.json') as f:
     persons = json.load(f)
+
+# login and token generate
 
 
 @app.route('/login', methods=['POST'])
@@ -39,17 +42,17 @@ def getMovies():
     params = request.args
     movies_filtered = movies
     if "genre" in params:
-        print('genre is on')
         movies_filtered = [
-            movie for movie in movies_filtered if movie['genre'] == params['genre']]
+            movie for movie in movies_filtered if movie['genre'].lower() == params['genre'].lower()]
     if "year" in params:
-        print('year is on')
         movies_filtered = [
-            movie for movie in movies_filtered if movie['year'] == params['year']]
+            movie for movie in movies_filtered if movie['year'].lower() == params['year'].lower()]
     if "type" in params:
-        print('type is on')
         movies_filtered = [
-            movie for movie in movies_filtered if movie['type'] == params['type']]
+            movie for movie in movies_filtered if movie['type'].lower() == params['type'].lower()]
+
+    if len(movies_filtered) == 0:
+        return jsonify({"status": False, "message": "No movies found"})
 
     return jsonify({"status": True, "message": "Movies Fetched with success", "data": movies_filtered, })
 
@@ -61,17 +64,19 @@ def getUsers():
     params = request.args
     person_filtered = persons
     if "movie" in params:
-        print('movie is on')
         person_filtered = [
-            movie for movie in person_filtered if movie['movie'] == params['movie']]
+            movie for movie in person_filtered if movie['movie'].lower() == params['movie'].lower()]
     if "profession" in params:
-        print('profession is on')
         person_filtered = [
-            movie for movie in person_filtered if movie['profession'] == params['profession']]
+            movie for movie in person_filtered if movie['profession'].lower() == params['profession'].lower()]
+
+    if len(person_filtered) == 0:
+        return jsonify({"status": False, "message": "No users found"})
 
     return jsonify({"status": True, "message": "Users API Called with success", "data": person_filtered, })
 
 
+# home route
 @app.route('/')
 def home():
     return 'Running flask home!'
